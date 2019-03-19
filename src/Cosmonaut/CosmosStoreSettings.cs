@@ -28,6 +28,8 @@ namespace Cosmonaut
 
         public JsonSerializerSettings JsonSerializerSettings { get; set; }
 
+        public int? DefaultCollectionTimeToLive { get; set; } = null;
+
         public bool InfiniteRetries { get; set; } = true;
 
         public string CollectionPrefix { get; set; } = string.Empty;

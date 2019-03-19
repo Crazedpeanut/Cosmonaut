@@ -250,7 +250,7 @@ namespace Cosmonaut
             CollectionName = GetCosmosStoreCollectionName(overridenCollectionName);
             
             _databaseCreator.EnsureCreatedAsync(DatabaseName, Settings.DefaultDatabaseThroughput).ConfigureAwait(false).GetAwaiter().GetResult();
-            _collectionCreator.EnsureCreatedAsync<TEntity>(DatabaseName, CollectionName, Settings.DefaultCollectionThroughput, Settings.IndexingPolicy, Settings.OnDatabaseThroughput)
+            _collectionCreator.EnsureCreatedAsync<TEntity>(DatabaseName, CollectionName, Settings.DefaultCollectionThroughput, Settings.IndexingPolicy, Settings.OnDatabaseThroughput, Settings.DefaultCollectionTimeToLive)
                 .ConfigureAwait(false).GetAwaiter().GetResult();
         }
 
